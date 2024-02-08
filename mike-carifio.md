@@ -8,7 +8,7 @@
 * Can face customers, senior leaders and investors. I explain the complicated in an approachable way.
 * Have led efforts of all sizes in companies of all sizes using agile, lean and seat−of−the−pants techniques.
 
-Resume current as of 02/08/2024. [Contact](#contact) information below.
+Resume current as of 02/08/2024. [Contact](#contact) information below. Alternative formats: [pdf](./mike-carifio.md.pdf) and [docx](./mike-carifio.md.docx) (Microsoft Word).
 
 
 
