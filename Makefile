@@ -8,15 +8,33 @@
 %.md.pdf : %.md
 	pandoc --standalone --pdf-engine=wkhtmltopdf  --to=html --metadata title="Mike Carifio" $< -o $@
 
+%.contact.yaml.vcf : %.contact.yaml
+	echo "tbs $< -> $@"
 
-OBJECTS := carifio.md.html carifio.md.docx carifio.md.pdf
 
-.PSEUDO: all clean prereq
-all : $(OBJECTS) # prereq
+SOURCES := mike-carifio.md mike-carifio.contact.yaml
+OBJECTS := mike-carifio.md.html mike-carifio.md.docx mike-carifio.md.pdf mike-carifio.contact.yaml.vcf
+SCP := www-data@do:html/mike.carif.io/html/resume
+URL := http://mike.carif.io/resume/
+
+.PSEUDO: all clean prereq objects sources scp browse
+all : objects
+objects: $(OBJECTS) # prereq
+$(OBJECTS) : $(SOURCES)
+
 clean :
 	rm $(OBJECTS)
 
-# prereq: /usr/bin/pandoc /usr/bin/wkhtmltopdf
-# 	sudo dnf install -y pandoc mkhtmltopdf just
+scp: objects
+	scp $(SOURCES) $(OBJECTS) $(SCP)
 
-$(OBJECTS) : carifio.md
+browse: scp
+	xdg-open $(URL)
+
+
+# TODO mike@carif.io: have make install the right tools before all
+prereq: /usr/bin/pandoc /usr/bin/wkhtmltopdf
+	sudo dnf install -y pandoc mkhtmltopdf just
+
+
+

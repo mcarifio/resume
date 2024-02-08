@@ -1,0 +1,17 @@
+%YAML 1.2
+contact:
+  name: Mike Carifio
+  postal: 31 Morning St, Scarborough ME 04074−8686
+  email: Mike Carifio <forward+resume-2024-02-08@carif.io>
+  realtime:
+    tel: tel://+1−978−377−8680 ## email preferred for initial contact
+    zoom: https://us04web.zoom.us/j/2511909801
+    web:
+      main: https://mike.carif.io/
+      blog: https://mike.carif.io/blog/
+      code: https://www.github.com/mcarifio
+    social:
+      linkedin: https://www.linkedin.com/in/mcarifio
+      twitter: @mike_carifio
+    self: https://mike.carif.io/resume/mike-carifio.contact.yaml
+
