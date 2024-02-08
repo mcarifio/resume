@@ -52,7 +52,7 @@ make browse  # generates results, uploads to http://mike.carif.io/resume/ and br
 
 # todo
 
-* Add https let's encrypt key to https://mike.carif.io/
+* Add https let's encrypt key to https://mike.carif.io/. Use caddy as the server?
 * Add styling with css via pandoc. Learn css.
 * Generate htmx?
 * Author in .mdx instead?
