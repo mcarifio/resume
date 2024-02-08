@@ -8,7 +8,7 @@
 * Can face customers, senior leaders and investors. I explain the complicated in an approachable way.
 * Have led efforts of all sizes in companies of all sizes using agile, lean and seat−of−the−pants techniques.
 
-Resume current as of 02/08/2024. [Contact](#Contact) information below.
+Resume current as of 02/08/2024. [Contact](#contact) information below.
 
 
 
@@ -186,33 +186,15 @@ Resume current as of 02/08/2024. [Contact](#Contact) information below.
 
 ## /dev/random
 
-* I taught Computer Science and LISP Programing on an adjunct basis at Boston University for several years in late 80's. Teaching is one of the best ways to learn something thoroughly.
-* I've used emacs longer than most of my peers have been alive.
+* I taught Computer Science and LISP Programing on an adjunct basis at Boston University for several years. Teaching is one of the best ways to learn something thoroughly.
+* I've used emacs longer than most of my colleagues have been alive.
 * I have a sense of humor (this isn't an example).
-* My hidden superpower: I can deference null (this is an example).
+* My hidden superpower is that I can deference null (this is an example).
 
 
 
-## Contact
+## <a id="contact"></a> Contact
 
-Contact information in [yaml](https://yaml.org/): 
-
-```yaml
-%YAML 1.2
-contact:
-	postal: 31 Morning St, Scarborough ME 04074−8686
-	email: forward+resume-2024-02-08@carif.io
-    realtime:
-		tel: tel://+1−978−377−8680 ## email preferred for initial contact
-		zoom: https://us04web.zoom.us/j/2511909801
-	web:
-		main: https://mike.carif.io/
-		blog: https://mike.carif.io/blog/
-		code: https://www.github.com/mcarifio
-	social:
-		linkedin: https://www.linkedin.com/in/mcarifio
-		twitter: @mike_carifio
-```
-
-... and an equivalent [virtual contact file](carifio.vcf) (sometimes called a _vcard_).
+* [mike-carifio.contact.yaml](./mike-carifio.contact.yaml) is my contact information in [yaml](https://yaml.org/)
+* [mike-carifio.contact.yaml.vcf](./mike-carifio.contact.yaml.vcf) is my contact information in [virtual card format](https://yaml.org/) sometimes called a _vcard_.
 

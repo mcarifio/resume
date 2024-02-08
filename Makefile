@@ -9,7 +9,7 @@
 	pandoc --standalone --pdf-engine=wkhtmltopdf  --to=html --metadata title="Mike Carifio" $< -o $@
 
 %.contact.yaml.vcf : %.contact.yaml
-	echo "tbs $< -> $@"
+	touch $@
 
 
 SOURCES := mike-carifio.md mike-carifio.contact.yaml
@@ -17,7 +17,7 @@ OBJECTS := mike-carifio.md.html mike-carifio.md.docx mike-carifio.md.pdf mike-ca
 SCP := www-data@do:html/mike.carif.io/html/resume
 URL := http://mike.carif.io/resume/
 
-.PSEUDO: all clean prereq objects sources scp browse
+.PSEUDO: all clean prereq objects sources upload browse
 all : objects
 objects: $(OBJECTS) # prereq
 $(OBJECTS) : $(SOURCES)
@@ -25,10 +25,10 @@ $(OBJECTS) : $(SOURCES)
 clean :
 	rm $(OBJECTS)
 
-scp: objects
-	scp $(SOURCES) $(OBJECTS) $(SCP)
+upload: objects
+	rsync -av --exclude='.git*' for/ $(SOURCES) $(OBJECTS) $(SCP)
 
-browse: scp
+browse: upload
 	xdg-open $(URL)
 
 

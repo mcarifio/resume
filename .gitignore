@@ -1,3 +1,14 @@
 *.md.pdf
 *.md.html
 *.md.docx
+*.contact.yaml.vcf
+.attic/**
+*.log
+*.tar.gz
+*.tgz
+*.tar.xz
+*.txz
+*.zip
+*.tar
+*~
+.#*#
