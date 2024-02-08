@@ -17,6 +17,6 @@ clean :
 	rm $(OBJECTS)
 
 # prereq: /usr/bin/pandoc /usr/bin/wkhtmltopdf
-# 	sudo dnf install -y pandoc mkhtmltopdf
+# 	sudo dnf install -y pandoc mkhtmltopdf just
 
 $(OBJECTS) : carifio.md
