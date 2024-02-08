@@ -2,7 +2,6 @@
 *.md.html
 *.md.docx
 *.contact.yaml.vcf
-.attic/**
 *.log
 *.tar.gz
 *.tgz
@@ -12,3 +11,7 @@
 *.tar
 *~
 .#*#
+
+.attic/**
+# customized versions for various postings and recruiters
+for/**
