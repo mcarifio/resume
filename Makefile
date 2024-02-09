@@ -17,10 +17,12 @@
 
 SOURCES := mike-carifio.md mike-carifio.mdx mike-carifio.contact.yaml
 OBJECTS := mike-carifio.md.html mike-carifio.md.docx mike-carifio.md.pdf mike-carifio.contact.yaml.vcf mike-carifio.mdx.js
-SCP := www-data@do:html/mike.carif.io/html/resume
+HOST := www-data@do
+FOLDER := html/mike.carif.io/html/resume
+SCP := $(HOST):$(FOLDER)
 URL := http://mike.carif.io/resume/
 
-.PSEUDO: all clean start objects sources upload browse
+.PSEUDO: all clean start objects sources upload browse ssh
 all : objects
 objects: $(OBJECTS) # prereq
 $(OBJECTS) : $(SOURCES)
@@ -39,5 +41,7 @@ start:
 	sudo dnf install -y pandoc wkhtmltopdf just curl deno direnv
 	direnv allow .
 
+ssh:
+	ssh $(HOST) ## cd $(FOLDER)
 
 
