@@ -5,6 +5,9 @@ Exercises in generating a resume.
 ## start
 
 ```
+echo $BASH_VERSION 
+5.2.26(1)-release
+
 echo "104.236.99.3 do mike.carif.io" | sudo tee -a /etc/hosts
 ping do
 ping mike.carif.io
