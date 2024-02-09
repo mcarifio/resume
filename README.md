@@ -26,7 +26,7 @@ ssh -T www-data@do groups
 www-data sudo mcarifio
 
 sudo dnf upgrade -y
-sudo dnf install -y pandoc mkhtmltopdf just gmake emacs curl # yq?
+sudo dnf install -y pandoc mkhtmltopdf just gmake emacs curl deno # yq?
 
 curl --head http://mike.carif.io/resume/
 HTTP/1.1 200 OK
@@ -46,8 +46,9 @@ Accept-Ranges: bytes
 ## hack
 
 ```
-emacs mike-carifio.md # ...
-make browse  # generates results, uploads to http://mike.carif.io/resume/ and browses the target using your default web browser
+emacs mike-carifio.md{,?} ## edit sources
+make ## generate results
+make browse  ## generates results, uploads to http://mike.carif.io/resume/ and browses the target using your default web browser
 ```
 
 # todo
@@ -55,7 +56,7 @@ make browse  # generates results, uploads to http://mike.carif.io/resume/ and br
 * Add https let's encrypt key to https://mike.carif.io/. Use caddy as the server?
 * Add styling with css via pandoc. Learn css.
 * Generate htmx?
-* Author in .mdx instead?
+* Author in .mdx instead? See mdx.ts.
 * Match the resume presentation to a job posting.
 
 
