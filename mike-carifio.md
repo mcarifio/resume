@@ -23,7 +23,9 @@ Resume current as of 02/08/2024. [Contact](#contact) information below. Alternat
   - Installed CIQ products "on premise", sometimes adapting the product set and/or customer infrastructure to match product requirements and their needs.
   - Technologies: bash, python, golang, pulumi, kubernettes, podman, docker, linux containers, git, github, gitlab.
 
-* Owner, M00nlit Systems, The Internet (05/2015 -- present) Technologist specializing in application development, including cloud-native applications.  Clients include:
+* Owner, M00nlit Systems, The Internet (05/2015 -- present) Technologist specializing in application development, including cloud-native applications.  
+
+   Clients include:
 
   - Lead Developer (08/2019 - 08/2021) for [The Crescendo Consulting Group](http://www.crescendocg.com/), a consulting practice specializing in Healthcare IT.
 	+ Wrote an .Net 5 webapp in C# to compute patient acuity scores based on patient features.
@@ -87,7 +89,9 @@ Resume current as of 02/08/2024. [Contact](#contact) information below. Alternat
     - Wrote QA and unit tests using SOAPui.
     - Technologies: Java 5/6, maven, spring, intellij idea, SQL Services, mysql, hybernate, junit, xml, sax, wsdl, Apache CXF, bash, perl, SOAPui.
 
-* Owner, Understanding Systems, Inc (08/1997 -- 04/2008) Technologist specializing in internet applications. Clients included:
+* Owner, Understanding Systems, Inc (08/1997 -- 04/2008) Technologist specializing in internet applications.
+
+    Clients included:
 
     - Vivox (http://www.vivox.com)
         + Automated their SDK testing with swig and perl5.
@@ -196,5 +200,6 @@ Resume current as of 02/08/2024. [Contact](#contact) information below. Alternat
 ## <a id="contact"></a> Contact
 
 * [mike-carifio.contact.yaml](./mike-carifio.contact.yaml) is my contact information in [yaml](https://yaml.org/)
-* [mike-carifio.contact.yaml.vcf](./mike-carifio.contact.yaml.vcf) is my contact information in [virtual card format](https://yaml.org/) sometimes called a _vcard_.
+<!-- * [mike-carifio.contact.yaml.vcf](./mike-carifio.contact.yaml.vcf) is my contact information in [virtual card format](https://yaml.org/) sometimes called a _vcard_. -->
+
 

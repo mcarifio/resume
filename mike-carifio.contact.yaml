@@ -6,12 +6,12 @@ contact:
     street: 31 Morning St
     town: Scarborough
     state: ME
-    zip: 04074−8686
+    zip: 04074-8686
   communication:
     async:
       email: Mike Carifio <forward+resume-2024-02-08@carif.io>
     sync:
-      tel: tel://+1−978−377−8680
+      tel: tel://+1-978-377-8680
       video: https://us04web.zoom.us/j/2511909801
   content:
     main: https://mike.carif.io/
