@@ -26,7 +26,7 @@ clean :
 	rm $(OBJECTS)
 
 upload: objects
-	rsync -av --exclude='.git*' for/ $(SOURCES) $(OBJECTS) $(SCP)
+	rsync -av --exclude='.git*' for/ recommendations/ $(SOURCES) $(OBJECTS) $(SCP)
 
 browse: upload
 	xdg-open $(URL)

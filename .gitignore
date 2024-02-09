@@ -1,7 +1,8 @@
-*.md.pdf
-*.md.html
-*.md.docx
-*.contact.yaml.vcf
+# emacs
+*~
+.#*#
+
+# working files
 *.log
 *.tar.gz
 *.tgz
@@ -9,9 +10,15 @@
 *.txz
 *.zip
 *.tar
-*~
-.#*#
-
 .attic/**
+
+# pandoc, mdx.ts generation
+*.md*.pdf
+*.md*.html
+*.md*.docx
+
+# yaml2vcf
+*.contact.yaml.vcf
+
 # customized versions for various postings and recruiters
 for/**
