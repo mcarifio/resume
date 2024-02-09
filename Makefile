@@ -32,10 +32,13 @@ clean :
 	rm $(OBJECTS)
 
 # TODO mike@carif.io: overwriting index.hml
+# rsync -avz --backup --backup-dir=.attic --relative --exclude='.git*' for/ testimonials/ $(SOURCES) $(OBJECTS) $(SCP)
+# rsync -avz --exclude='.git*' $(SOURCES) $(OBJECTS) $(SCP)
+# rsync -avz --exclude='.git*' --relative for/ $(SCP)
+# rsync -avz --exclude='.git*' --relative testimonials/ $(SCP)
+
 upload: objects
-	rsync -avz --exclude='.git*' $(SOURCES) $(OBJECTS) $(SCP)
-	rsync -avz --exclude='.git*' for/ $(SCP)/for
-	rsync -avz --exclude='.git*' testimonials/ $(SCP)/testimonials
+	rsync -avz --relative --exclude='.git*' for/ testimonials/ $(SOURCES) $(OBJECTS) $(SCP)
 
 browse: upload
 	xdg-open $(URL)
