@@ -15,12 +15,13 @@
 	./mdx.ts $<
 
 
-SOURCES := mike-carifio.md mike-carifio.mdx mike-carifio.contact.yaml
-OBJECTS := mike-carifio.md.html mike-carifio.md.docx mike-carifio.md.pdf mike-carifio.contact.yaml.vcf mike-carifio.mdx.js
+SOURCES := mike-carifio.md mike-carifio-all.md mike-carifio.mdx mike-carifio.contact.yaml
 HOST := www-data@do
 FOLDER := html/mike.carif.io/html/resume
 SCP := $(HOST):$(FOLDER)
 URL := http://mike.carif.io/resume/
+SUFFIX := html pdf docx
+OBJECTS := $(foreach s,$(SUFFIX), mike-carifio.md.$(s)) $(foreach s,$(SUFFIX), mike-carifio-all.md.$(s)) mike-carifio.contact.yaml.vcf mike-carifio.mdx.js
 
 .PSEUDO: all clean start objects sources upload browse ssh
 all : objects
