@@ -11,9 +11,12 @@
 %.contact.yaml.vcf : %.contact.yaml
 	touch $@
 
+%.mdx.js : %.mdx
+	./mdx.ts $<
 
-SOURCES := mike-carifio.md mike-carifio.contact.yaml
-OBJECTS := mike-carifio.md.html mike-carifio.md.docx mike-carifio.md.pdf mike-carifio.contact.yaml.vcf
+
+SOURCES := mike-carifio.md mike-carifio.mdx mike-carifio.contact.yaml
+OBJECTS := mike-carifio.md.html mike-carifio.md.docx mike-carifio.md.pdf mike-carifio.contact.yaml.vcf mike-carifio.mdx.js
 SCP := www-data@do:html/mike.carif.io/html/resume
 URL := http://mike.carif.io/resume/
 
