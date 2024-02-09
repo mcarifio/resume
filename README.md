@@ -29,7 +29,22 @@ ssh -T www-data@do groups
 www-data sudo mcarifio
 
 sudo dnf upgrade -y
-sudo dnf install -y pandoc mkhtmltopdf just gmake emacs curl deno # yq?
+sudo dnf install -y gmake
+
+make start
+sudo dnf install -y pandoc wkhtmltopdf just curl deno direnv
+Last metadata expiration check: 0:01:13 ago on Fri 09 Feb 2024 01:47:10 PM EST.
+Package pandoc-3.1.3-25.fc39.x86_64 is already installed.
+Package wkhtmltopdf-0.12.6-2.fc39.5.x86_64 is already installed.
+Package just-1.23.0-1.fc39.x86_64 is already installed.
+Package curl-8.2.1-4.fc39.x86_64 is already installed.
+Package deno-1.36.4-1.x86_64 is already installed.
+Package direnv-2.32.3-1.fc39.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+direnv allow .
+direnv: loading ~/src/mike.carif.io/resume/.envrc
 
 curl --head http://mike.carif.io/resume/
 HTTP/1.1 200 OK
