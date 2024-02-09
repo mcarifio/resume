@@ -34,8 +34,8 @@ clean :
 # TODO mike@carif.io: overwriting index.hml
 upload: objects
 	rsync -avz --exclude='.git*' $(SOURCES) $(OBJECTS) $(SCP)
-	rsync -avz --exclude='.git*' for/ $(SCP)
-	rsync -avz --exclude='.git*' testimonials/ $(SCP)
+	rsync -avz --exclude='.git*' for/ $(SCP)/for
+	rsync -avz --exclude='.git*' testimonials/ $(SCP)/testimonials
 
 browse: upload
 	xdg-open $(URL)
