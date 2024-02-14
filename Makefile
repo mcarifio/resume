@@ -1,6 +1,8 @@
 # https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html
+%.md : %.gpp.md
+	gpp -o $@ $<
+
 %.md.html : %.md
-	# pandoc --standalone --to=html5 --metadata title="Mike Carifio" $< -o $@
 	pandoc --standalone --to=html5 $< -o $@
 
 %.md.docx : %.md
@@ -16,7 +18,8 @@
 	./mdx.ts $<
 
 
-SOURCES := $(wildcard mike-carifio*.md) mike-carifio.mdx mike-carifio.contact.yaml
+SOURCES := mike-carifio.gpp.md mike-carifio.mdx mike-carifio.contact.yaml
+MDS := mike-carifio.md mike-carifio-full.md
 HOST := www-data@do
 FOLDER := html/mike.carif.io/html/resume
 SCP := $(HOST):$(FOLDER)
@@ -25,7 +28,14 @@ SUFFIX := html pdf docx
 OBJECTS := $(foreach s,$(SUFFIX), mike-carifio.md.$(s)) $(foreach s,$(SUFFIX), mike-carifio-full.md.$(s)) mike-carifio.contact.yaml.vcf mike-carifio.mdx.js
 
 .PSEUDO: all clean start objects sources upload browse ssh
-all : objects
+all : $(MDS) objects
+
+mike-carifio.md : mike-carifio.gpp.md
+	gpp -o $@ $<
+
+mike-carifio-full.md : mike-carifio.gpp.md
+	gpp -Dfull -o $@ $<
+
 objects: $(OBJECTS) # prereq
 $(OBJECTS) : $(SOURCES)
 
@@ -46,7 +56,7 @@ browse: upload
 
 
 start:
-	sudo dnf install -y pandoc wkhtmltopdf just curl deno direnv
+	sudo dnf install -y pandoc wkhtmltopdf just curl deno direnv gpp
 	direnv allow .
 
 ssh:
