@@ -15,8 +15,12 @@ contact:
       video: https://us04web.zoom.us/j/2511909801
   content:
     main: https://mike.carif.io/
-    blog: https://mikecarifio.substack.com/
-    code: https://www.github.com/mcarifio
+    blog:
+      this_week_i_learned: https://mikecarifio.medium.com/this-week-i-learned
+      geek_meets_biz: https://mikecarifio.substack.com/
+    code:
+      github: https://www.github.com/mcarifio
+      git: https://git.carif.io/mcarifio
   social:
     linkedin: https://www.linkedin.com/in/mcarifio
     twitter: @mike_carifio
