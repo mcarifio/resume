@@ -1,0 +1,38 @@
+#!/usr/bin/env -S just --justfile
+
+# pj
+default:
+	just --justfile {{justfile()}} --list --unsorted
+
+# pj which
+which:
+	@echo "{{justfile()}}"
+
+# pj root // different from git pj root?
+root:
+	@echo "{{parent_directory(parent_directory(justfile_directory()))}}"
+
+
+# pj install // install packages
+install:
+	if type -p dnf &> /dev/null ; then
+	    sudo dnf upgrade -y --allowerasing --nobest
+	    sudo dnf install tree
+	else if type -p apt &> /dev/null; then
+	    sudo apt upgrade -y
+	    sudo apt install tree
+	else if type -p snap &> /dev/null; then
+	    sudo snap install
+	else if type -p flatpack &> /dev/null; then
+	fi
+install-dnf key repo *packages:
+
+
+# pj false # test error processing
+false:
+	#!/usr/bin/env bash
+	false || { status=$?; >&2 echo "{{invocation_directory()}} => ${status} "; exit ${status}; }
+
+justdoc := "https://just.systems/man/en/"
+justdoc:
+	xdg-open "{{justdoc}}"

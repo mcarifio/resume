@@ -1,0 +1,18 @@
+#!/usr/bin/env -S just --justfile
+
+# git pj
+default:
+	just --justfile {{justfile()}} --list --unsorted
+
+# git pj which
+which:
+	@echo "{{justfile()}}"
+
+# git pj root
+root:
+	#!/usr/bin/env bash
+	git rev-parse --show-toplevel || { status=$?; >&2 echo "{{invocation_directory()}} is not in a git repository?"; exit ${status}; }
+
+false:
+	#!/usr/bin/env bash
+	false || { status=$?; >&2 echo "{{invocation_directory()}} => ${status} "; exit ${status}; }
