@@ -12,7 +12,15 @@ title: Mike Carifio
 * Skilled in Internet technologies and service oriented architectures using various software stacks and interprocess communication protocols.
   I can breath life into new ideas without breaking the bank.
 
-Resume current as of 02/2024. [Contact](#contact) information below. Alternative formats: [pdf](./mike-carifio.md.pdf) and [docx](./mike-carifio.md.docx) (Microsoft Word).
+Resume current as of 02/2024. [Contact](#contact) information below. Alternative formats: <a id="pdf">pdf</a> and <a id="docx">docx</a>.
+<script>
+  function href(id) {
+     let prefix = window.location.pathname.slice(window.location.pathname.lastIndexOf("/") + 1, -5) || "mike-carifio.md";
+     document.getElementById(id).href =  prefix + "." + id; 
+  };
+  href('pdf'); 
+  href('docx');
+</script>
 
 
 
@@ -29,7 +37,7 @@ Resume current as of 02/2024. [Contact](#contact) information below. Alternative
 
 * Owner, [Moonlit Systems](https://moonlit.systems/), The Internet (05/2015 -- present) Technologist specializing in software development, including cloud-native applications.
 
-  Clients have included:
+  Roles included:
 
   - Lead Developer (08/2019 -- 08/2021) for [The Crescendo Consulting Group](http://www.crescendocg.com/), a consulting practice specializing in Healthcare IT.
 	+ Wrote an .Net service in C# to compute patient acuity scores based on patient symptoms from well known mental health questionaires.

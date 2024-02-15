@@ -17,6 +17,7 @@
 *.md*.html
 *.md*.docx
 *.mdx.js
+*.md
 
 # yaml2vcf
 *.contact.yaml.vcf

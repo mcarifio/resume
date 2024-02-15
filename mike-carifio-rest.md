@@ -16,7 +16,7 @@
 
 * Owner, Understanding Systems, Inc (08/1997 -- 04/2008) Technologist specializing in internet applications. 
 
-  Clients included:
+  Roles included:
 
     - [Vivox](https://unity.com/products/vivox-voice-chat) (now Unity)
         + Automated their SDK testing with swig and perl5.
