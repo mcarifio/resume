@@ -82,7 +82,7 @@ Resume current as of 02/2024. [Contact](#contact) information below. Alternative
     - Wrote a Windows 7/.Net 4.0 control panel to dual boot Windows and Ubuntu on Dell laptops (part of the Ubuntu Light project).
     - Adapted Ubuntu for thin client hardware using the [Remote Desktop Protocol](https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/understanding-remote-desktop-protocol).
     - Adapted Ubuntu to run on Android phones as an alternative desktop manager.
-    - Adapted Ubuntu to run in cars as the "infotainment" console. Wrote code in C/C++ and Python3 (command line and gtk apps).  
+    - Adapted Ubuntu to run in cars as the infotainment console. Wrote code in C/C++ and Python3 (command line and gtk apps).  
     - Packaged open source software using apt. Extended the apt mechanism in C++, Python2/3 and bash for specific client needs.
     - Technologies: Python3, nose, C/C++, bash, .Net WPF, .Net Services, C#, docbook, pycharm, apt, bzr, deb, RDP.
 
