@@ -33,7 +33,7 @@ Resume current as of 02/2024. [Contact](#contact) information below. Alternative
   - Implemented infrastructure and development projects as needed and as assigned on the [Azure](https://azure.microsoft.com/), [Google](https://cloud.google.com/) and [Oracle](https://www.oracle.com/cloud/) clouds and at [Vultr](https://www.vultr.com/).
   - Wrote articles and [blog posts](https://ciq.com/blog/ciqs-rocky-linux-images-now-available-on-azure/) describing interesting or important Rocky Linux and CIQ technology.
   - Installed CIQ products "on premise", sometimes adapting the product set and/or customer infrastructure to match product requirements and their needs.
-  - Technologies: bash, python, golang, pulumi, kubernettes, podman/docker, linux containers, git, github, gitlab, jira.
+  - Technologies: bash, python, golang, pulumi, kubernettes, podman/docker, linux containers, git, github, gitlab, jira, scrum, rhetoric.
 
 * Owner, [Moonlit Systems](https://moonlit.systems/), The Internet (05/2015 -- present) Technologist specializing in software development, including cloud-native applications.
 
@@ -49,17 +49,17 @@ Resume current as of 02/2024. [Contact](#contact) information below. Alternative
     + Architected a revamped product suite, wrote project proposals, recruited and managed a remote team of eight.
     + Ran daily standup and a modified SCRUM process.
 	* Selected tools and technologies, transitioned legacy products from co-located servers to [Amazon Web Services](https://aws.amazon.com/).
-    + Technologies: java, javascript, nodejs, keystone, mongodb, git, aws, jira, bash.
+    + Technologies: java, javascript, nodejs, keystone, mongodb, git, aws, jira, bash, scrum
 
   - Investigator (07/2015 -- 09/2016) for [ASM Research](https://www.asmr.com/), a DoD contractor, to leverage technologies to modernize the Veteran Administration's healthcare IT infrastructure.
     + Wrote nodejs modules, documentation, test suites for a [FHIR](https://www.hl7.org/fhir/) extract-transform-load library.
     + Technologies: javascript, nodejs, noflo, RDF, jsonld, git, mongodb, aws, vpn, bash.
 
-* Developer, [Pazien](http://support.worldpay.com/support/iq-reporting-and-analytics-user-guide/content/pazien_interactive_analytics.htm) (now [Worldpay](https://www.worldpay.com/en/)), Newton MA (06/14 -- 05/15) Python3 Developer
+* Python Developer, [Pazien](http://support.worldpay.com/support/iq-reporting-and-analytics-user-guide/content/pazien_interactive_analytics.htm) (now [Worldpay](https://www.worldpay.com/en/)), Newton MA (06/14 -- 05/15)
 
     - Wrote python3 plumbing to drive a reporting website for the credit card industry.
     - Helped plan sprints, ran the daily standup, coached peers, investigated technology where needed.
-    - Technologies: python3, git, pycharm, ansible, aws, mongodb, pymongo, SQLAlchemy, sql.
+    - Technologies: python3, git, pycharm, ansible, aws, mongodb, pymongo, SQLAlchemy, sql, scrum.
 
 * Senior Software Engineer, [Amadeus](https://amadeus.com/en) North America, Waltham MA (11/13 -- 06/14) Distributed Systems Messaging Broker
 
@@ -89,7 +89,7 @@ Resume current as of 02/2024. [Contact](#contact) information below. Alternative
 #ifdef full
 #include mike-carifio-rest.md
 #else
-A longer employment history [is available](mike-carifio-full.md.html)
+A longer employment history spanning over four decades [is available](mike-carifio-full.md.html). The history above covers the most recent decade.
 #endif
 
 
@@ -114,10 +114,11 @@ A longer employment history [is available](mike-carifio-full.md.html)
 
 ## /dev/random
 
-* I taught Computer Science and LISP Programing on an adjunct basis at Boston University for several years. Teaching is one of the best ways to learn something thoroughly.
+* I taught Computer Science and [LISP](https://lisp-lang.org/) Programing on an adjunct basis at Boston University for several years. Teaching is one of the best ways to learn something thoroughly.
 * I've used [emacs](https://www.gnu.org/software/emacs/) longer than most of my colleagues have been alive.
 * I have a sense of humor (this isn't an example).
-* My hidden superpower is that I can deference null (this is an example).
+<!-- * My hidden superpower is that I can deference null (this is an example). -->
+* But not about emacs (this is an example).
 
 
 
