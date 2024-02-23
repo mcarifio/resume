@@ -22,7 +22,7 @@ SRC := src
 GPP := $(call rwildcard, $(SRC),*.md)
 YAML := $(call rwildcard, $(SRC),*.yaml)
 SOURCES := $(GPP) $(YAML)
-# $(info $(SOURCES))
+$(info $(SOURCES))
 # MDS := mike-carifio.md mike-carifio-full.md
 USERNAME_HOSTNAME := www-data@do
 FOLDER := html/mike.carif.io/html/resume
@@ -32,35 +32,35 @@ SUFFIX := md html pdf docx
 OUT := out
 RESUME=$(OUT)/resume
 OBJECTS := $(foreach source, $(SOURCES), $(foreach suffix,$(SUFFIX), $(RESUME)/$(source).$(suffix)))
-# $(info $(OBJECTS))
+$(info $(OBJECTS))
 
 # https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html
-vpath %.gpp.md $(SRC)
-%.md : %.gpp.md
-	gpp -o $^ $<
+# vpath %.gpp.md $(SRC)
+$(RESUME)/%.gpp.md : $(SRC)/%.gpp.md
+	gpp -o $@ $^
 
-vpath %.gpp.yaml $(SRC)
-%.yaml : %.gpp.yaml
-	gpp -o $^ $<
+# vpath %.gpp.yaml $(SRC)
+$(RESUME)/%.yaml : $(SRC)/%.yaml
+	cp -v $^ $@
 
-vpath %.md $(RESUME)
-%.md.html : %.md
+# vpath %.md $(RESUME)
+$(RESUME)/%.gpp.md.html : $(RESUME)/%.gpp.md
 	pandoc --standalone --to=html5 $^ -o $@
 
-vpath %.md $(RESUME)
-%.md.docx : %.md
+# vpath %.md $(RESUME)
+$(RESUME)/%.gpp.md.docx : $(RESUME)/%.gpp.md
 	pandoc --standalone --to=docx $^ -o $@
 
-%.md.pdf : %.md
+$(RESUME)/%.gpp.md.pdf : $(RESUME)/%.gpp.md
 	pandoc --standalone --pdf-engine=wkhtmltopdf  --to=html $^ -o $@
 
-vpath %.contact.yaml $(SRC)
-%.contact.yaml.vcf : %.contact.yaml
-	cp $@ $^
+# vpath %.contact.yaml $(SRC)
+$(RESUME)/%.contact.yaml.vcf : $(SRC)/%.contact.yaml
+	cp -v $^ $@
 
 vpath %.mdx $(SRC)
-%.mdx.js : %.mdx
-	./mdx.ts $^
+$(RESUME)/%.mdx.js : $(SRC)/%.mdx
+	./mdx.ts $@
 
 
 
@@ -99,9 +99,7 @@ start:
 ssh:
 	ssh $(USERNAME_HOSTNAME) ## cd $(FOLDER)
 
-make.gitignore : Makefile
-	printf  '# $@ generated with `$@` on %s\n' "$$(date)" > $@
-	printf '*.%s\n' $(SUFFIX) >> $@
-	printf '%s/**\n' $$(realpath --relative-to=. -m $(OUT)) >> $@
-
-
+gitignore : Makefile
+	printf  '\n\n# $@ generated with `$@` on %s\n' "$$(date)" >> $<
+	printf '*.%s\n' $(SUFFIX) >> $<
+	printf '%s/**\n' $$(realpath --relative-to=. -m $(OUT)) >> $<

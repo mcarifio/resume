@@ -1,6 +1,0 @@
-# make.gitignore generated with `make gitignore` on Fri Feb 23 03:46:31 PM EST 2024
-*.md
-*.html
-*.pdf
-*.docx
-out/**
