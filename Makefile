@@ -1,31 +1,28 @@
-# https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html
-%.md : %.gpp.md
-	gpp -o $@ $<
+# https://stackoverflow.com/questions/16467718/how-to-print-out-a-variable-in-makefile
+# if the first command line argument is "print"
+# ifeq ($(firstword $(MAKECMDGOALS)),print)
 
-%.yaml : %.gpp.yaml
-	gpp -o $@ $<
+#   # take the rest of the arguments as variable names
+#   VAR_NAMES := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
 
-%..md.html : %..md
-	pandoc --standalone --to=html5 $< -o $@
+#   # turn them into do-nothing targets
+#   $(eval $(VAR_NAMES):;@:))
 
-%.md.docx : %.md
-	pandoc --standalone --to=docx $< -o $@
-
-%.md.pdf : %.md
-	pandoc --standalone --pdf-engine=wkhtmltopdf  --to=html $< -o $@
-
-%.contact.yaml.vcf : %.contact.yaml
-	touch $@
-
-%.mdx.js : %.mdx
-	./mdx.ts $<
+#   # then print them
+#   .PHONY: print
+#   print:
+#           @$(foreach var,$(VAR_NAMES),\
+#             echo '$(var) = $($(var))';)
+# endif
 
 rwildcard=$(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2) $(filter $(subst *,%,$2),$d))
 
 
-GPP := $(call rwildcard, src,*.gpp.md)
-YAML := $(call rwildcard, src,*.yaml)
+SRC := src
+GPP := $(call rwildcard, $(SRC),*.md)
+YAML := $(call rwildcard, $(SRC),*.yaml)
 SOURCES := $(GPP) $(YAML)
+# $(info $(SOURCES))
 # MDS := mike-carifio.md mike-carifio-full.md
 USERNAME_HOSTNAME := www-data@do
 FOLDER := html/mike.carif.io/html/resume
@@ -35,6 +32,37 @@ SUFFIX := md html pdf docx
 OUT := out
 RESUME=$(OUT)/resume
 OBJECTS := $(foreach source, $(SOURCES), $(foreach suffix,$(SUFFIX), $(RESUME)/$(source).$(suffix)))
+# $(info $(OBJECTS))
+
+# https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html
+vpath %.gpp.md $(SRC)
+%.md : %.gpp.md
+	gpp -o $^ $<
+
+vpath %.gpp.yaml $(SRC)
+%.yaml : %.gpp.yaml
+	gpp -o $^ $<
+
+vpath %.md $(RESUME)
+%.md.html : %.md
+	pandoc --standalone --to=html5 $^ -o $@
+
+vpath %.md $(RESUME)
+%.md.docx : %.md
+	pandoc --standalone --to=docx $^ -o $@
+
+%.md.pdf : %.md
+	pandoc --standalone --pdf-engine=wkhtmltopdf  --to=html $^ -o $@
+
+vpath %.contact.yaml $(SRC)
+%.contact.yaml.vcf : %.contact.yaml
+	cp $@ $^
+
+vpath %.mdx $(SRC)
+%.mdx.js : %.mdx
+	./mdx.ts $^
+
+
 
 .PSEUDO: all clean start objects sources upload browse ssh make.gitignore
 all : objects

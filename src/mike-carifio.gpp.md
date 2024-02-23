@@ -4,13 +4,12 @@ title: Mike Carifio
 
 ## Summary
 
-* Have led and managed software development teams large and small, local and remote.
-* Have delivered profitable software products and services by writing code, tests, requirements, specifications and documentation.
-* Have created cloud infrastructure on public clouds in support of these services and automated the process where needed.
-* Have engaged customers, senior leaders and especially investors by explaining complicated concepts in approachable ways.
-* Have led efforts of all sizes in companies of all shapes using agile, lean and seat−of−the−pants techniques.
-* Skilled in Internet technologies and service oriented architectures using various software stacks and interprocess communication protocols.
-  I can breath life into new ideas without breaking the bank.
+* Led and managed software development teams large and small, local and remote in companies of all shapes using agile, lean and seat−of−the−pants techniques.
+* Delivered profitable software products and services by crafting and refining the vision and then writing the code, tests, requirements, specifications and documentation.
+* Created cloud infrastructure on public clouds in support of these services adding automation where needed.
+* Engaged customers, senior leaders and especially investors by explaining complicated concepts in approachable ways.
+* Skilled in Internet technologies and service oriented architectures using various software stacks and interprocess communication protocols. I can realize new ideas without breaking the bank.
+
 
 Resume current as of 02/2024. [Contact](#contact) information below. Alternative formats: <a id="pdf">pdf</a> and <a id="docx">docx</a>.
 <script>
@@ -207,6 +206,7 @@ A longer employment history spanning over four decades [is available](mike-carif
 
 
 
+#ifdef random
 ## /dev/random
 
 * I taught Computer Science and [LISP](https://lisp-lang.org/) Programing on an adjunct basis at Boston University for several years. Teaching is one of the best ways to learn something thoroughly.
@@ -214,6 +214,7 @@ A longer employment history spanning over four decades [is available](mike-carif
 * I have a sense of humor (this isn't an example).
 <!-- * My hidden superpower is that I can deference null (this is an example). -->
 * But not about emacs (this is an example).
+#endif
 
 
 
