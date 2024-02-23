@@ -12,15 +12,12 @@
 *.tar
 .attic/**
 
-# pandoc, mdx.ts generation
-*.gpp.md*.pdf
-*.gpp.md*.html
-*.gpp.md*.docx
+include gitignore
+
+# make gitignore
+*.pdf
+*.html
+*.docx
 *.mdx.js
 *.md
-
-# yaml2vcf
-*.contact.yaml.vcf
-
-# customized versions for various postings and recruiters
 out/**
