@@ -13,9 +13,9 @@
 .attic/**
 
 # pandoc, mdx.ts generation
-*.md*.pdf
-*.md*.html
-*.md*.docx
+*.gpp.md*.pdf
+*.gpp.md*.html
+*.gpp.md*.docx
 *.mdx.js
 *.md
 
@@ -23,4 +23,4 @@
 *.contact.yaml.vcf
 
 # customized versions for various postings and recruiters
-for/**
+out/**
