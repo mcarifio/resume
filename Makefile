@@ -36,7 +36,7 @@ OUT := out
 RESUME=$(OUT)/resume
 OBJECTS := $(foreach source, $(SOURCES), $(foreach suffix,$(SUFFIX), $(RESUME)/$(source).$(suffix)))
 
-.PSEUDO: all clean start objects sources upload browse ssh gitignore
+.PSEUDO: all clean start objects sources upload browse ssh make.gitignore
 all : objects
 objects: $(OBJECTS)
 $(OBJECTS) : $(SOURCES)
@@ -71,7 +71,9 @@ start:
 ssh:
 	ssh $(USERNAME_HOSTNAME) ## cd $(FOLDER)
 
-gitignore:
-	@printf '*.%s\n' $(SUFFIX)
-	@printf '%s/**\n' $$(realpath --relative-to=. -m $(OUT))
+make.gitignore : Makefile
+	printf  '# $@ generated with `$@` on %s\n' "$$(date)" > $@
+	printf '*.%s\n' $(SUFFIX) >> $@
+	printf '%s/**\n' $$(realpath --relative-to=. -m $(OUT)) >> $@
+
 
