@@ -1,0 +1,8 @@
+
+# make gitignore > make.gitignore
+*.pdf
+*.html
+*.docx
+*.mdx.js
+*.md
+out/**

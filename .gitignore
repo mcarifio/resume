@@ -12,12 +12,4 @@
 *.tar
 .attic/**
 
-include gitignore
-
-# make gitignore
-*.pdf
-*.html
-*.docx
-*.mdx.js
-*.md
-out/**
+include make.gitignore

@@ -2,7 +2,10 @@
 %.md : %.gpp.md
 	gpp -o $@ $<
 
-%.md.html : %.md
+%.yaml : %.gpp.yaml
+	gpp -o $@ $<
+
+%..md.html : %..md
 	pandoc --standalone --to=html5 $< -o $@
 
 %.md.docx : %.md
@@ -17,30 +20,36 @@
 %.mdx.js : %.mdx
 	./mdx.ts $<
 
+rwildcard=$(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2) $(filter $(subst *,%,$2),$d))
 
-SOURCES := mike-carifio.gpp.md mike-carifio.mdx mike-carifio.contact.yaml
-MDS := mike-carifio.md mike-carifio-full.md
-HOST := www-data@do
+
+GPP := $(call rwildcard, src,*.gpp.md)
+YAML := $(call rwildcard, src,*.yaml)
+SOURCES := $(GPP) $(YAML)
+# MDS := mike-carifio.md mike-carifio-full.md
+USERNAME_HOSTNAME := www-data@do
 FOLDER := html/mike.carif.io/html/resume
-SCP := $(HOST):$(FOLDER)
+SCP := $(USERNAME_HOSTNAME):$(FOLDER)
 URL := http://mike.carif.io/resume/
-SUFFIX := html pdf docx
-OBJECTS := $(foreach s,$(SUFFIX), mike-carifio.md.$(s)) $(foreach s,$(SUFFIX), mike-carifio-full.md.$(s)) mike-carifio.contact.yaml.vcf mike-carifio.mdx.js
+SUFFIX := md html pdf docx
+OUT := out
+RESUME=$(OUT)/resume
+OBJECTS := $(foreach source, $(SOURCES), $(foreach suffix,$(SUFFIX), $(RESUME)/$(source).$(suffix)))
 
-.PSEUDO: all clean start objects sources upload browse ssh
-all : $(MDS) objects
-
-mike-carifio.md : mike-carifio.gpp.md
-	gpp -o $@ $<
-
-mike-carifio-full.md : mike-carifio.gpp.md
-	gpp -Dfull -o $@ $<
-
-objects: $(OBJECTS) # prereq
+.PSEUDO: all clean start objects sources upload browse ssh gitignore
+all : objects
+objects: $(OBJECTS)
 $(OBJECTS) : $(SOURCES)
 
+# mike-carifio.md : mike-carifio.gpp.md
+# 	gpp -o $@ $<
+
+# mike-carifio-full.md : mike-carifio.gpp.md
+# 	gpp -Dfull -o $@ $<
+
+
 clean :
-	rm $(OBJECTS)
+	rm -rf $(RESUME)
 
 # TODO mike@carif.io: overwriting index.hml
 # rsync -avz --backup --backup-dir=.attic --relative --exclude='.git*' for/ testimonials/ $(SOURCES) $(OBJECTS) $(SCP)
@@ -49,7 +58,7 @@ clean :
 # rsync -avz --exclude='.git*' --relative testimonials/ $(SCP)
 
 upload: objects
-	rsync -avz --relative --exclude='.git*' for/ testimonials/ publications/ $(SOURCES) $(OBJECTS) $(SCP)
+	rsync -avz --relative --exclude='.git*' $(RESUME)/ $(SCP)
 
 browse: upload
 	xdg-open $(URL)
@@ -60,6 +69,9 @@ start:
 	direnv allow .
 
 ssh:
-	ssh $(HOST) ## cd $(FOLDER)
+	ssh $(USERNAME_HOSTNAME) ## cd $(FOLDER)
 
+gitignore:
+	@printf '*.%s\n' $(SUFFIX)
+	@printf '%s/**\n' $$(realpath --relative-to=. -m $(OUT))
 
