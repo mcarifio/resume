@@ -12,9 +12,10 @@
 *.tar
 .attic/**
 
-# make.gitignore generated with `make gitignore` on Fri Feb 23 03:46:31 PM EST 2024
 *.html
 *.pdf
 *.docx
-out/**
+*.md
+*.yaml
+
 
