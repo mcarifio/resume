@@ -16,6 +16,7 @@
 # endif
 
 rwildcard=$(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2) $(filter $(subst *,%,$2),$d))
+HERE := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
 
 SRC := src
