@@ -1,20 +1,3 @@
-# https://stackoverflow.com/questions/16467718/how-to-print-out-a-variable-in-makefile
-# if the first command line argument is "print"
-# ifeq ($(firstword $(MAKECMDGOALS)),print)
-
-#   # take the rest of the arguments as variable names
-#   VAR_NAMES := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
-
-#   # turn them into do-nothing targets
-#   $(eval $(VAR_NAMES):;@:))
-
-#   # then print them
-#   .PHONY: print
-#   print:
-#           @$(foreach var,$(VAR_NAMES),\
-#             echo '$(var) = $($(var))';)
-# endif
-
 rwildcard=$(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2) $(filter $(subst *,%,$2),$d))
 HERE := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
@@ -33,14 +16,17 @@ SCP := $(USERNAME_HOSTNAME):$(FOLDER)
 URL := http://mike.carif.io/resume/
 # OUT := out
 # RESUME=$(OUT)/resume/
-OBJECTS := $(foreach source, $(SOURCES:.gpp=), $(foreach suffix,html pdf docx, $(RESUME)$(source).$(suffix))) $(GPP:.md.gpp=.md)
+OBJECTS := $(foreach source, $(SOURCES:.gpp=) $(SOURCES:.md.gpp=-full.md), $(foreach suffix,html pdf docx, $(RESUME)$(source).$(suffix))) $(GPP:.md.gpp=.md) $(GPP:.md.gpp=-full.md) 
 $(info $(OBJECTS))
 
 # https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html
 # vpath %.gpp.md $(SRC)
 # $(RESUME)/%.gpp.md : $(SRC)/%.gpp.md
 %.md : %.md.gpp
-	gpp -o $@ $<
+	gpp -Dhumor -o $@ $<
+
+%-full.md : %.md.gpp
+	gpp -Dfull -Dhumor -o $@ $<
 
 # vpath %.gpp.yaml $(SRC)
 # $(RESUME)/%.yaml : $(SRC)/%.yaml
