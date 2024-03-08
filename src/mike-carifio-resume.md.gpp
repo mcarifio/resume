@@ -2,7 +2,7 @@
 title: Mike Carifio
 ---
 
-## Summary
+## <a id="Summary">Summary</a>
 
 * Led and managed software development teams large and small, local and remote, in companies of all kinds using agile, lean and seat−of−the−pants techniques.
 * Delivered profitable software products and services by crafting and refining a vision and then writing the code, tests, requirements, specifications and documentation to realize it.
@@ -24,7 +24,7 @@ Resume current as of 02/2024. [Contact](#contact) information below. Alternative
 
 
 
-## Experience
+## <a id="Experience">Experience</a>
 
 * Linux Engineer, [CIQ](https://www.ciq.com/), The Internet (08/2021 -- 09/2023)
 
@@ -187,14 +187,14 @@ A longer employment history spanning over four decades [is available](mike-carif
 #endif
 
 
-## Education
+## <a id="Education">Education</a>
 
 * Master of Science, Computer Science, [Boston University](https://www.bu.edu/), Boston MA, 1986.
 * Bachelor of Science, Mathematics, [Boston College](https://www.bc.edu/), Chestnut Hill, MA, 1980.
 
 
 
-## Publications
+## <a id="Publications">Publications</a>
 
 * _Building Knowledge-based Operating System Consultants_, Meyer Billmers and Michael G. Carifio, Proceedings of the Second International Conference on Artificial Intelligence, 1985.
 * _TWS: A Workstation Environment for Machine-Assisted Natural Language Translation_, Michael G. Carifio, Arthur McCaffrey, Peter Anick, Lynn Staub, AIAGTR 12-88, 1988.
@@ -207,7 +207,7 @@ A longer employment history spanning over four decades [is available](mike-carif
 
 
 #ifdef humor
-## /dev/random
+## <a id="random">dev/random</a>
 
 * I taught Computer Science and [LISP](https://lisp-lang.org/) Programing on an adjunct basis at Boston University for several years. Teaching is one of the best ways to learn something thoroughly.
 * I've used [emacs](https://www.gnu.org/software/emacs/) longer than most of my colleagues have been alive.
@@ -216,10 +216,13 @@ A longer employment history spanning over four decades [is available](mike-carif
 * But not about emacs (this is an example).
 #endif
 
+## <a id="Portfolio">Portfolio</a>
+
+* [bashenv](https://github.com/mcarifio/bashenv/) is a simple bash command line environment to create small commands to automate your work. It provides the right balance between
+  automation, customization and installation. Fork, configure, run.
 
 
-
-## <a id="contact"></a> Contact
+## <a id="Contact"></a> Contact
 
 * [mike-carifio.contact.yaml](./mike-carifio.contact.yaml) is my contact information in [yaml](https://yaml.org/)
 * [mike-carifio.contact.yaml.vcf](./mike-carifio.contact.yaml.vcf) is my contact information in [virtual card format](https://yaml.org/), a vcard.
